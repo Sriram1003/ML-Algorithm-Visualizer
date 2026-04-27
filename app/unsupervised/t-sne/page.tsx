@@ -9,14 +9,14 @@ import { FileUpload } from '@/components/ui/file-upload';
 import dynamic from 'next/dynamic';
 
 // Lazy load Recharts for performance optimization
-const ScatterChart = dynamic(() => import('recharts').then(mod => mod.ScatterChart), { ssr: false });
-const Scatter = dynamic(() => import('recharts').then(mod => mod.Scatter), { ssr: false });
-const XAxis = dynamic(() => import('recharts').then(mod => mod.XAxis), { ssr: false });
-const YAxis = dynamic(() => import('recharts').then(mod => mod.YAxis), { ssr: false });
-const CartesianGrid = dynamic(() => import('recharts').then(mod => mod.CartesianGrid), { ssr: false });
-const ScatterTooltip = dynamic(() => import('recharts').then(mod => mod.Tooltip), { ssr: false });
-const Legend = dynamic(() => import('recharts').then(mod => mod.Legend), { ssr: false });
-const ResponsiveContainer = dynamic(() => import('recharts').then(mod => mod.ResponsiveContainer), { ssr: false });
+const ScatterChart = dynamic(() => import('recharts').then(mod => mod.ScatterChart) as any, { ssr: false });
+const Scatter = dynamic(() => import('recharts').then(mod => mod.Scatter) as any, { ssr: false });
+const XAxis = dynamic(() => import('recharts').then(mod => mod.XAxis) as any, { ssr: false });
+const YAxis = dynamic(() => import('recharts').then(mod => mod.YAxis) as any, { ssr: false });
+const CartesianGrid = dynamic(() => import('recharts').then(mod => mod.CartesianGrid) as any, { ssr: false });
+const ScatterTooltip = dynamic(() => import('recharts').then(mod => mod.Tooltip) as any, { ssr: false });
+const Legend = dynamic(() => import('recharts').then(mod => mod.Legend) as any, { ssr: false });
+const ResponsiveContainer = dynamic(() => import('recharts').then(mod => mod.ResponsiveContainer) as any, { ssr: false });
 
 const TSNEPage = () => {
   const [data, setData] = useState<{ x: number, y: number, z: number }[]>([]);

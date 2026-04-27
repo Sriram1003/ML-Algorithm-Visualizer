@@ -12,7 +12,7 @@ import { CsvUploader } from '@/components/lab/CsvUploader';
 import { MetricsDisplay } from '@/components/lab/MetricsDisplay';
 import dynamic from 'next/dynamic';
 
-const Tree = dynamic(() => import('react-d3-tree').then(mod => mod.Tree), { ssr: false });
+const Tree = dynamic(() => import('react-d3-tree').then(mod => mod.Tree) as any, { ssr: false });
 
 export default function GradientBoostingPage() {
   const {

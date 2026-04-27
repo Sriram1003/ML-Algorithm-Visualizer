@@ -13,12 +13,12 @@ import { CsvUploader } from '@/components/lab/CsvUploader';
 import { MetricsDisplay } from '@/components/lab/MetricsDisplay';
 
 // Dynamically import charts with SSR disabled
-const Bar = dynamic(() => import('react-chartjs-2').then((mod) => mod.Bar), {
+const Bar = dynamic(() => import('react-chartjs-2').then((mod) => mod.Bar) as any, {
   ssr: false,
   loading: () => <div className="h-[300px] w-full bg-white/5 animate-pulse rounded-lg mt-4" />
 });
 
-const Line = dynamic(() => import('react-chartjs-2').then((mod) => mod.Line), {
+const Line = dynamic(() => import('react-chartjs-2').then((mod) => mod.Line) as any, {
   ssr: false,
   loading: () => <div className="h-[300px] w-full bg-white/5 animate-pulse rounded-lg mt-4" />
 });

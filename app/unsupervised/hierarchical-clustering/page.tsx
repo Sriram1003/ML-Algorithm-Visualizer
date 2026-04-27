@@ -6,16 +6,16 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Boxes, Settings, Play, RefreshCw, Upload, Network } from 'lucide-react';
 import { FileUpload } from '@/components/ui/file-upload';
-import {
-  ScatterChart,
-  Scatter,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer
-} from 'recharts';
+import dynamic from 'next/dynamic';
+
+const ScatterChart = dynamic(() => import('recharts').then(mod => mod.ScatterChart) as any, { ssr: false });
+const Scatter = dynamic(() => import('recharts').then(mod => mod.Scatter) as any, { ssr: false });
+const XAxis = dynamic(() => import('recharts').then(mod => mod.XAxis) as any, { ssr: false });
+const YAxis = dynamic(() => import('recharts').then(mod => mod.YAxis) as any, { ssr: false });
+const CartesianGrid = dynamic(() => import('recharts').then(mod => mod.CartesianGrid) as any, { ssr: false });
+const ChartTooltip = dynamic(() => import('recharts').then(mod => mod.Tooltip) as any, { ssr: false });
+const Legend = dynamic(() => import('recharts').then(mod => mod.Legend) as any, { ssr: false });
+const ResponsiveContainer = dynamic(() => import('recharts').then(mod => mod.ResponsiveContainer) as any, { ssr: false });
 
 interface Point {
   id: number;

@@ -6,16 +6,16 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { FileUpload } from '@/components/ui/file-upload';
-import {
-  ScatterChart,
-  Scatter,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer
-} from 'recharts';
+import dynamic from 'next/dynamic';
+
+const ScatterChart = dynamic(() => import('recharts').then(mod => mod.ScatterChart) as any, { ssr: false });
+const Scatter = dynamic(() => import('recharts').then(mod => mod.Scatter) as any, { ssr: false });
+const XAxis = dynamic(() => import('recharts').then(mod => mod.XAxis) as any, { ssr: false });
+const YAxis = dynamic(() => import('recharts').then(mod => mod.YAxis) as any, { ssr: false });
+const CartesianGrid = dynamic(() => import('recharts').then(mod => mod.CartesianGrid) as any, { ssr: false });
+const Tooltip = dynamic(() => import('recharts').then(mod => mod.Tooltip) as any, { ssr: false });
+const Legend = dynamic(() => import('recharts').then(mod => mod.Legend) as any, { ssr: false });
+const ResponsiveContainer = dynamic(() => import('recharts').then(mod => mod.ResponsiveContainer) as any, { ssr: false });
 import { UMAP } from 'umap-js';
 
 const UMAPPage = () => {
