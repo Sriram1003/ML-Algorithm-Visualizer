@@ -204,21 +204,21 @@ const Home: React.FC = () => {
                 Next-Gen ML Learning Engine
               </motion.div>
               
-              <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-white mb-2 uppercase leading-none italic italic">
+              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter text-white mb-2 uppercase leading-none italic">
                 Quantified <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500 not-italic">Logic</span>
               </h1>
               
               <RotatingText texts={["Visualize Data", "Analyze Kernels", "Train Models", "Optimize Space"]} />
               
-              <p className="text-gray-500 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto my-12 leading-relaxed">
+              <p className="text-gray-500 text-sm sm:text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto my-12 leading-relaxed px-4">
                 Experience the raw math of artificial intelligence through interactive laboratory environments. 
                 De-mystify algorithms with high-fidelity visual telemetry.
               </p>
               
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+              <div className="flex flex-col items-center justify-center gap-6">
                 <button 
                   onClick={() => setIsExploring(true)}
-                  className="px-12 py-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-black uppercase tracking-[0.3em] text-xs rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-purple-500/20"
+                  className="px-8 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-black uppercase tracking-[0.3em] text-[10px] sm:text-xs rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-purple-500/20"
                   aria-label="Enter the Algorithm Laboratory"
                 >
                   Enter Laboratory
@@ -232,7 +232,7 @@ const Home: React.FC = () => {
               transition={{ delay: 1, duration: 2 }}
               className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
             >
-               <div className="text-[10px] font-black uppercase tracking-[0.5em] text-gray-700">Scroll to Explore</div>
+               <div className="text-[10px] font-black uppercase tracking-[0.5em] text-gray-700 text-center">Scroll to Explore</div>
                <div className="w-[1px] h-12 bg-gradient-to-b from-purple-500 to-transparent" />
             </motion.div>
           </motion.div>
@@ -242,10 +242,10 @@ const Home: React.FC = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="min-h-screen pt-40 pb-32 px-8 max-w-7xl mx-auto relative z-10"
+            className="min-h-screen pt-32 sm:pt-40 pb-32 px-4 sm:px-8 max-w-7xl mx-auto relative z-10"
           >
-            <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
-              <div className="flex-1">
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 sm:mb-20 gap-8">
+              <div className="flex-1 w-full overflow-hidden">
                 <button 
                   onClick={() => setIsExploring(false)}
                   className="flex items-center gap-3 text-gray-500 hover:text-white transition-all group mb-8 uppercase font-black text-[10px] tracking-[0.4em]"
@@ -255,11 +255,11 @@ const Home: React.FC = () => {
                   </div>
                   Return Home
                 </button>
-                <h2 className="text-6xl font-black text-white tracking-tighter uppercase italic italic">
-                  Algorithm <span className="text-purple-500 not-italic">Facilitators</span>
+                <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tighter uppercase italic break-words">
+                  Algorithm <br className="md:hidden" /><span className="text-purple-500 not-italic">Facilitators</span>
                 </h2>
               </div>
-              <p className="text-gray-500 text-sm max-w-xs font-light tracking-widest uppercase leading-loose text-right">
+              <p className="text-gray-500 text-xs sm:text-sm max-w-xs font-light tracking-widest uppercase leading-loose text-left md:text-right">
                  Select a paradigm to begin high-fidelity simulation of machine learning architectures.
               </p>
             </div>

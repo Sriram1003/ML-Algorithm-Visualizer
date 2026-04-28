@@ -33,7 +33,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-1">Electronic Mail</p>
-                  <p className="text-xl font-bold">station@algovista.ai</p>
+                  <p className="text-xl font-bold">sriram.gaja10@gmail.com</p>
                 </div>
               </div>
 
@@ -43,7 +43,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-1">Direct Comms</p>
-                  <p className="text-xl font-bold">+1 (888) NEURAL-TECH</p>
+                  <p className="text-xl font-bold">[YOUR MOBILE NUMBER]</p>
                 </div>
               </div>
 
