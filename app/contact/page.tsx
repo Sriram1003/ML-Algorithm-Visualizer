@@ -13,13 +13,7 @@ export default function ContactPage() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/10 blur-[150px] rounded-full" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Navigation */}
-        <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-white transition-colors mb-12 group">
-          <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-purple-600/20">
-             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          </div>
-          <span className="text-[10px] font-black uppercase tracking-[0.4em]">Abort Sequence</span>
-        </Link>
+        {/* Navigation Removed */}
 
         <div className="grid lg:grid-cols-2 gap-20">
           {/* Left Side: Info */}
@@ -28,7 +22,7 @@ export default function ContactPage() {
               Station <span className="text-white">Contact</span>
             </h1>
             <p className="text-xl text-gray-400 font-light leading-relaxed mb-12 max-w-xl">
-              Have inquiries about our algorithm labs or neural visualizations? 
+              Have inquiries about our algorithm labs or neural visualizations?
               Our ground station is active 24/7 for technical sync.
             </p>
 
@@ -59,23 +53,24 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-1">Orbital HQ</p>
-                  <p className="text-xl font-bold">Silicon Valley, CA, Earth</p>
+                  <p className="text-xl font-bold">Hyderabad, Telangana, India</p>
                 </div>
               </div>
             </div>
 
             {/* Social Bridges */}
             <div className="mt-16 flex gap-4">
-              {[Github, Linkedin].map((Icon, i) => (
-                <button key={i} className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center hover:bg-white/10 transition-all">
-                  <Icon size={20} className="text-gray-400 hover:text-white" />
-                </button>
-              ))}
+              <a href="https://github.com/Sriram1003" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center hover:bg-white/10 transition-all group">
+                <Github size={20} className="text-gray-400 group-hover:text-white" />
+              </a>
+              <a href="https://www.linkedin.com/in/sriram-gaja-b49aaa255/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center hover:bg-white/10 transition-all group">
+                <Linkedin size={20} className="text-gray-400 group-hover:text-white" />
+              </a>
             </div>
           </div>
 
           {/* Right Side: Form */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[3rem] p-12 shadow-2xl"
@@ -122,7 +117,7 @@ export default function ContactPage() {
                 <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </div>

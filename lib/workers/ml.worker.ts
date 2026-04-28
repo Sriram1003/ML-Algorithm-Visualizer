@@ -5,12 +5,26 @@ import {
   RandomForest, 
   KNN, 
   LogisticRegression,
+  LinearRegression,
+  KMeans,
   calculateClassificationMetrics,
   trainTestSplit,
   normalize
 } from '../ml';
 
 const mlApi = {
+  trainKMeans: (X: number[][], k: number) => {
+    const model = new KMeans();
+    const result = model.fit(X, k);
+    return { centroids: model.centroids, clusters: model.clusters, iterations: result?.iterations || 0 };
+  },
+
+  trainLinearRegression: (X: number[][], y: number[], lr: number, iter: number) => {
+    const model = new LinearRegression();
+    model.fit(X, y, lr, iter);
+    return { weights: model.weights, bias: model.bias, losses: model.losses };
+  },
+
   trainSVM: (X: number[][], y: number[], learningRate: number, lambda: number, iterations: number) => {
     const svm = new SVM();
     svm.fit(X, y, learningRate, lambda, iterations);

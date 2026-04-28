@@ -12,46 +12,14 @@ import { CsvUploader } from '@/components/lab/CsvUploader';
 import { MetricsDisplay } from '@/components/lab/MetricsDisplay';
 import dynamic from 'next/dynamic';
 
+const InteractiveLinearRegression = dynamic(
+  () => import('@/components/lab/InteractiveLinearRegression').then(mod => mod.InteractiveLinearRegression),
+  { ssr: false }
+);
 // Recharts components removed as they were unused and causing build errors
 
 
 export default function LinearRegressionPage() {
-  const {
-    data,
-    isTraining,
-    metrics,
-    error,
-    setIsTraining,
-    setMetrics,
-    setError,
-    handleFileUpload,
-  } = useMLModel();
-
-  const [learningRate, setLearningRate] = useState(0.01);
-  const [iterations, setIterations] = useState(100);
-
-  const trainModel = async () => {
-    if (!data) return;
-    setIsTraining(true);
-    setError(null);
-
-    try {
-      // Simulation of Ordinary Least Squares
-      setTimeout(() => {
-        setMetrics({
-          accuracy: 0.89, // R-squared
-          precision: 0.12, // MSE simulated
-          recall: 0.34, 
-          f1: 0.22
-        });
-        setIsTraining(false);
-      }, 2000);
-    } catch (err) {
-      setError("Regression Optimization Failure: " + (err as Error).message);
-      setIsTraining(false);
-    }
-  };
-
   const steps = [
     { title: 'Feature Alignment', description: 'Scale and center independent variables to improve gradient convergence.' },
     { title: 'Weight Initialization', description: 'Initialize regression coefficients (weights/biases) to zero or small random values.' },
@@ -79,73 +47,8 @@ export default function LinearRegressionPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          <Card className="bg-black/40 border-blue-500/20 border backdrop-blur-3xl shadow-2xl relative overflow-hidden group">
-            <CardHeader className="border-b border-white/5 bg-white/[0.02]">
-              <CardTitle className="text-white text-xs uppercase tracking-[0.4em] font-black flex items-center gap-2">
-                <Settings className="h-4 w-4 text-blue-500" /> SGD Config
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="pt-8">
-              <div className="space-y-10">
-                <div>
-                  <div className="flex justify-between items-end mb-6">
-                    <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40">Step Size ({learningRate})</label>
-                  </div>
-                  <Slider value={[learningRate]} onValueChange={(v) => setLearningRate(v[0])} min={0.001} max={0.1} step={0.001} />
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-end mb-6">
-                    <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40">Epochs ({iterations})</label>
-                  </div>
-                  <Slider value={[iterations]} onValueChange={(v) => setIterations(v[0])} min={10} max={1000} step={10} />
-                </div>
-
-                <div className="p-6 rounded-2xl bg-white/5 border border-white/5 text-center">
-                   <p className="text-[10px] text-blue-500 font-black uppercase tracking-widest mb-2 font-mono italic">Loss Function</p>
-                   <p className="text-3xl font-black text-white font-mono tracking-tighter uppercase">Mean_Sq_Error</p>
-                </div>
-
-                <Button 
-                  className="w-full bg-blue-600 hover:bg-blue-500 text-white font-black uppercase tracking-[0.2em] py-8 rounded-xl transition-all hover:scale-[1.02] shadow-2xl shadow-blue-500/20"
-                  onClick={trainModel}
-                  disabled={!data || isTraining}
-                >
-                  <Zap className="mr-2 h-4 w-4" />
-                  {isTraining ? 'Optimizing Coefficients...' : 'Fit Linear Plane'}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="lg:col-span-2 space-y-8">
-            <CsvUploader 
-              onFileUpload={handleFileUpload}
-              isTraining={isTraining}
-              error={error}
-              dataPoints={data?.length || 0}
-            />
-            
-            <MetricsDisplay metrics={metrics} />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-               <Card className="bg-black/60 border-blue-500/20 border backdrop-blur-3xl p-10 flex flex-col items-center justify-center text-center">
-                  <TrendingUp className="w-16 h-16 text-blue-500/20 mb-6" />
-                  <h3 className="text-lg font-black text-white uppercase italic mb-2 tracking-tighter">Correlation Kernels</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed px-10">
-                    Linear regression identifies the direct proportional dependency between input features and target outputs.
-                  </p>
-               </Card>
-               <Card className="bg-black/60 border-blue-500/20 border backdrop-blur-3xl p-10 flex flex-col items-center justify-center text-center">
-                  <Activity className="w-16 h-16 text-blue-500/20 mb-6" />
-                  <h3 className="text-lg font-black text-white uppercase italic mb-2 tracking-tighter">Gradient descent</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed px-10">
-                    Weights are updated iteratively to find the global minimum of the convex loss surface.
-                  </p>
-               </Card>
-            </div>
-          </div>
+        <div className="mb-16">
+           <InteractiveLinearRegression />
         </div>
 
         <AlgorithmInfo 

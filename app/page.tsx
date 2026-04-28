@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Brain, Network, Menu, X, GitMerge, ArrowLeft, Cpu } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Analytics } from '@/lib/analytics';
 
 // Define the props for the RotatingText component
 interface RotatingTextProps {
@@ -89,16 +90,8 @@ const Navigation: React.FC<NavigationProps> = ({ isScrolled, isMobileMenuOpen, s
 
 const NavLinks: React.FC = () => (
   <>
-    <Link href="/" className="text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors">Platform</Link>
     <Link href="/supervised/concepts" className="text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors">Resources</Link>
     <Link href="/contact" className="text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors">Connect</Link>
-    <Link 
-      href="/signin" 
-      className="px-8 py-3 bg-white text-black text-xs font-black uppercase tracking-[0.2em] rounded-full hover:bg-purple-500 hover:text-white transition-all shadow-xl shadow-white/5 hover:scale-105 active:scale-95"
-      aria-label="Access the terminal and sign in"
-    >
-      Terminal Access
-    </Link>
   </>
 );
 
@@ -145,6 +138,7 @@ const Home: React.FC = () => {
   const [isExploring, setIsExploring] = useState<boolean>(false);
 
   useEffect(() => {
+    Analytics.trackPageVisit('Home');
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -229,9 +223,6 @@ const Home: React.FC = () => {
                 >
                   Enter Laboratory
                 </button>
-                <button className="px-12 py-6 bg-white/5 border border-white/5 text-white/50 font-black uppercase tracking-[0.3em] text-xs rounded-2xl hover:bg-white/10 transition-all">
-                  Documentation
-                </button>
               </div>
             </div>
 
@@ -273,10 +264,46 @@ const Home: React.FC = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-32">
               {algorithmCards.map((card) => (
                 <AlgorithmCard key={card.href} {...card} />
               ))}
+            </div>
+
+            {/* Elite Portfolio Impact Section */}
+            <div className="mt-32 pt-20 border-t border-white/10 relative">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
+              
+              <div className="grid md:grid-cols-3 gap-12">
+                <div className="md:col-span-1">
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-500 mb-4 block">System Architecture</span>
+                  <h3 className="text-4xl font-black text-white mb-6 uppercase tracking-tighter italic">About the <br/>Engine</h3>
+                  <div className="flex gap-4">
+                    <a href="https://github.com/Sriram1003" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white/5 hover:bg-white/10 rounded-xl text-xs font-black uppercase tracking-[0.2em] transition-all flex items-center gap-2">
+                      GitHub Source
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="md:col-span-2 grid sm:grid-cols-2 gap-8">
+                  <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/5">
+                    <h4 className="text-xl font-bold text-white mb-4">Core Technologies</h4>
+                    <ul className="space-y-3 text-sm text-gray-400">
+                      <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-500"/> Next.js 13 App Router (Static Export)</li>
+                      <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-teal-500"/> Recharts & D3.js (Data Vis)</li>
+                      <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500"/> Framer Motion (Hardware Accel)</li>
+                      <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500"/> Web Workers (Async Processing)</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/5">
+                    <h4 className="text-xl font-bold text-white mb-4">Engineering Challenges</h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      Built to solve the <span className="text-purple-400 font-bold">hydration mismatch</span> paradigm between server-side React and heavy client-side SVG libraries like D3. Achieved 60fps animations on large datasets by offloading matrix transformations to non-blocking Web Workers while dynamically importing SVG rendering trees.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}

@@ -79,7 +79,7 @@ export default function SupervisedConcepts() {
     }
   ];
 
-  const handleNext = () => {
+  const handleNavigateToNextPhase = () => {
     if (currentSection < sections.length - 1) {
       setCurrentSection(currentSection + 1);
     } else {
@@ -87,7 +87,7 @@ export default function SupervisedConcepts() {
     }
   };
 
-  const handlePrev = () => {
+  const handleNavigateToPreviousPhase = () => {
     if (currentSection > 0) {
       setCurrentSection(currentSection - 1);
     } else {
@@ -101,7 +101,7 @@ export default function SupervisedConcepts() {
         {/* Navigation Bridge */}
         <div className="flex justify-between items-center mb-24 border-b border-white/5 pb-12">
           <button
-            onClick={handlePrev}
+            onClick={handleNavigateToPreviousPhase}
             className="flex items-center gap-3 text-gray-500 hover:text-white transition-all group"
           >
             <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-purple-600/20">
@@ -122,7 +122,7 @@ export default function SupervisedConcepts() {
           </div>
 
           <button
-            onClick={handleNext}
+            onClick={handleNavigateToNextPhase}
             className="flex items-center gap-3 bg-purple-600 hover:bg-purple-700 px-8 py-3 rounded-2xl shadow-lg shadow-purple-500/20 text-white transition-all"
           >
             <span className="text-[10px] font-black uppercase tracking-[0.4em]">

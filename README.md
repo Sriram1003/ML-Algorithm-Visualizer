@@ -4,6 +4,8 @@
 
 AlgoVista is a high-fidelity machine learning visualization platform designed to de-mystify complex algorithms through real-time visual telemetry. Built with a "Neural Laboratory" aesthetic, it provides an immersive experience for students, researchers, and developers to explore the inner workings of ML models.
 
+🚀 **[View Live Platform](https://sriram1003.github.io/ML-Algorithm-Visualizer/)**
+
 ![AlgoVista Banner](https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200)
 
 ## 🧪 Interactive Laboratories

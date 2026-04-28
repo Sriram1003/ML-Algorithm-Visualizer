@@ -78,6 +78,48 @@ export function normalize(X: number[][]) {
     return X.map(row => row.map((val, j) => (val - means[j]) / stds[j]));
 }
 
+export class LinearRegression {
+  public weights: number[] = [];
+  public bias: number = 0;
+  public losses: number[] = [];
+
+  fit(X: number[][], y: number[], learningRate: number = 0.01, iterations: number = 1000) {
+    const nSamples = X.length;
+    const nFeatures = X[0].length;
+    this.weights = new Array(nFeatures).fill(0);
+    this.bias = 0;
+    this.losses = [];
+
+    for (let i = 0; i < iterations; i++) {
+      let epochLoss = 0;
+      let dw = new Array(nFeatures).fill(0);
+      let db = 0;
+
+      for (let j = 0; j < nSamples; j++) {
+        const prediction = X[j].reduce((sum, val, k) => sum + val * this.weights[k], this.bias);
+        const error = prediction - y[j];
+        epochLoss += error * error;
+        
+        for (let k = 0; k < nFeatures; k++) {
+          dw[k] += (2 / nSamples) * error * X[j][k];
+        }
+        db += (2 / nSamples) * error;
+      }
+
+      for (let k = 0; k < nFeatures; k++) {
+        this.weights[k] -= learningRate * dw[k];
+      }
+      this.bias -= learningRate * db;
+      
+      if (i % 10 === 0) this.losses.push(epochLoss / nSamples);
+    }
+  }
+
+  predict(X: number[][]) {
+    return X.map(sample => sample.reduce((sum, val, k) => sum + val * this.weights[k], this.bias));
+  }
+}
+
 // KNN
 export class KNN {
   constructor(private k: number) {}
@@ -137,6 +179,72 @@ export class LogisticRegression {
             const linearModel = sample.reduce((sum, val, j) => sum + val * this.weights[j], this.bias);
             return this.sigmoid(linearModel) >= 0.5 ? 1 : 0;
         });
+    }
+}
+
+// K-Means Clustering
+export class KMeans {
+    public centroids: number[][] = [];
+    public clusters: number[] = [];
+
+    fit(X: number[][], k: number = 3, maxIterations: number = 100) {
+        if (X.length === 0) return;
+        const nFeatures = X[0].length;
+        
+        // Initialize centroids randomly
+        this.centroids = Array.from({ length: k }, () => X[Math.floor(Math.random() * X.length)].slice());
+        this.clusters = new Array(X.length).fill(-1);
+
+        let hasChanged = true;
+        let iter = 0;
+
+        while (hasChanged && iter < maxIterations) {
+            hasChanged = false;
+            
+            // Assign points to nearest centroid
+            for (let i = 0; i < X.length; i++) {
+                let minDist = Infinity;
+                let clusterIndex = -1;
+                
+                for (let j = 0; j < k; j++) {
+                    const dist = Math.sqrt(X[i].reduce((sum, val, d) => sum + Math.pow(val - this.centroids[j][d], 2), 0));
+                    if (dist < minDist) {
+                        minDist = dist;
+                        clusterIndex = j;
+                    }
+                }
+                
+                if (this.clusters[i] !== clusterIndex) {
+                    this.clusters[i] = clusterIndex;
+                    hasChanged = true;
+                }
+            }
+
+            // Update centroids
+            const newCentroids = Array.from({ length: k }, () => new Array(nFeatures).fill(0));
+            const counts = new Array(k).fill(0);
+
+            for (let i = 0; i < X.length; i++) {
+                const clusterId = this.clusters[i];
+                if (clusterId !== -1) {
+                    counts[clusterId]++;
+                    for (let d = 0; d < nFeatures; d++) {
+                        newCentroids[clusterId][d] += X[i][d];
+                    }
+                }
+            }
+
+            for (let j = 0; j < k; j++) {
+                if (counts[j] > 0) {
+                    for (let d = 0; d < nFeatures; d++) {
+                        this.centroids[j][d] = newCentroids[j][d] / counts[j];
+                    }
+                }
+            }
+            
+            iter++;
+        }
+        return { iterations: iter };
     }
 }
 
