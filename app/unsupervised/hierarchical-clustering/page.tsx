@@ -13,7 +13,7 @@ const Scatter = dynamic(() => import('recharts').then(mod => mod.Scatter) as any
 const XAxis = dynamic(() => import('recharts').then(mod => mod.XAxis) as any, { ssr: false });
 const YAxis = dynamic(() => import('recharts').then(mod => mod.YAxis) as any, { ssr: false });
 const CartesianGrid = dynamic(() => import('recharts').then(mod => mod.CartesianGrid) as any, { ssr: false });
-const ChartTooltip = dynamic(() => import('recharts').then(mod => mod.Tooltip) as any, { ssr: false });
+const Tooltip = dynamic(() => import('recharts').then(mod => mod.Tooltip) as any, { ssr: false });
 const Legend = dynamic(() => import('recharts').then(mod => mod.Legend) as any, { ssr: false });
 const ResponsiveContainer = dynamic(() => import('recharts').then(mod => mod.ResponsiveContainer) as any, { ssr: false });
 
