@@ -65,7 +65,7 @@ export default function SVMPage() {
             <div className="p-3 bg-pink-500/10 rounded-xl border border-pink-500/20">
                <ShieldCheck className="w-8 h-8 text-pink-500" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-500">
+            <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-500 break-words">
               SVM <span className="text-pink-500 not-italic">Hyperplane</span>
             </h1>
           </div>

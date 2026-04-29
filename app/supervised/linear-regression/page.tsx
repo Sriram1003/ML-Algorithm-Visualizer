@@ -37,7 +37,7 @@ export default function LinearRegressionPage() {
             <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/20">
                <ChartIcon className="w-8 h-8 text-blue-500" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-500">
+            <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-500 break-words">
               Linear <span className="text-blue-500 not-italic">Regression</span>
             </h1>
           </div>
