@@ -27,16 +27,16 @@ const KMeansPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020202] text-white pb-24">
+    <div className="w-full max-w-[100vw] overflow-hidden px-4 sm:px-6 md:px-8 min-h-screen bg-[#020202] text-white pb-24">
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(168,85,247,0.03),transparent_40%)] pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-8 pt-24 relative z-10">
+      <div className="max-w-7xl mx-auto pt-24 relative z-10">
         <div className="mb-16 border-b border-white/5 pb-12">
           <div className="flex items-center gap-4 mb-6">
             <div className="p-3 bg-purple-500/10 rounded-xl border border-purple-500/20">
                <Boxes className="w-8 h-8 text-purple-400" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-500">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-500">
               K-Means <span className="text-purple-500 not-italic">Clustering</span>
             </h1>
           </div>

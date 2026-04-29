@@ -82,12 +82,12 @@ export default function EnsembleConceptsPage() {
         >
           <div className="text-center mb-20">
              <span className="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">Theoretical Foundation</span>
-             <h1 className="text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500 leading-none">
+             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
                 Integrated <span className="text-purple-500">Logic</span>
              </h1>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             {concepts.map((c, i) => (
               <motion.div 
                 whileHover={{ scale: 1.02 }}

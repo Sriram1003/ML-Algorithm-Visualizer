@@ -135,7 +135,7 @@ export function InteractiveLinearRegression() {
              <p className="text-xs text-gray-500 mt-2">Number of complete passes through the dataset.</p>
           </div>
 
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 w-full pt-4">
             <Button 
                onClick={resetData}
                className="flex-1 bg-white/5 border border-white/10 hover:bg-white/10 text-white text-[10px] uppercase tracking-widest font-black"
@@ -175,7 +175,7 @@ export function InteractiveLinearRegression() {
         </div>
 
         {/* Right Side: Recharts SVG Interactive Graph */}
-        <div id="regression-graph-container" className="flex-1 h-[400px] border border-white/5 rounded-2xl bg-black/60 relative overflow-hidden" aria-live="polite">
+        <div id="regression-graph-container" className="flex-1 h-[300px] md:h-[400px] border border-white/5 rounded-2xl bg-black/60 relative overflow-hidden" aria-live="polite">
           {isTraining && (
              <div className="absolute top-4 right-4 text-[10px] uppercase tracking-widest text-blue-400 font-black animate-pulse flex items-center gap-2 z-10">
                 <div className="w-2 h-2 rounded-full bg-blue-500" /> Computing...

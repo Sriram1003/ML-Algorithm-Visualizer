@@ -55,12 +55,12 @@ export default function UnsupervisedAlgorithms() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#010a0a] text-white pb-40 overflow-hidden selection:bg-teal-500/30">
+    <div className="w-full max-w-[100vw] overflow-hidden px-4 sm:px-6 md:px-8 min-h-screen bg-[#010a0a] text-white pb-40 selection:bg-teal-500/30">
       {/* Background Decor */}
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(20,184,166,0.05),transparent_40%)] pointer-events-none" />
       <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.02] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-10 pt-32 relative z-10">
+      <div className="max-w-7xl mx-auto pt-32 relative z-10">
         {/* Unsupervised Header */}
         <div className="mb-24 flex flex-col md:flex-row items-start md:items-end justify-between border-b border-teal-500/10 pb-16 gap-8">
           <div>
@@ -73,7 +73,7 @@ export default function UnsupervisedAlgorithms() {
               </div>
               Research Theory
             </button>
-            <h1 className="text-8xl font-black tracking-tighter text-white leading-none mb-6 uppercase italic">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter text-white mb-6 uppercase italic">
               Discovery <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-500 not-italic">Engine</span>
             </h1>
             <p className="text-gray-500 text-xl font-light tracking-wide max-w-2xl leading-relaxed">

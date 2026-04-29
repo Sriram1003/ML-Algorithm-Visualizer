@@ -111,14 +111,14 @@ const TSNEPage = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Data Upload */}
           <Card className="bg-gray-900 border-purple-700 p-6 md:col-span-2">
             <div className="flex items-center mb-6">
               <Upload className="w-6 h-6 text-purple-400 mr-2" />
               <h2 className="text-2xl font-bold text-purple-400">Upload Data</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <p className="text-gray-300 mb-4">
                   Upload a CSV file with &apos;x&apos;, &apos;y&apos;, and &apos;z&apos; columns to visualize your own data points.
@@ -165,7 +165,7 @@ const TSNEPage = () => {
               <h2 className="text-2xl font-bold text-purple-400">Algorithm Controls</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Perplexity: {perplexity}

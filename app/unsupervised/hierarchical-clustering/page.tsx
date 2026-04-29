@@ -174,7 +174,7 @@ export default function HierarchicalClusteringPage() {
 
           <Card className="bg-gray-900 border-purple-700/50 p-6 md:col-span-8">
             <h2 className="text-2xl font-bold text-purple-400 mb-6">Cluster Visualization</h2>
-            <div className="h-[500px]">
+            <div className="h-[350px] md:h-[500px]">
               <ResponsiveContainer width="100%" height="100%">
                 <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#222" />

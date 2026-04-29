@@ -225,7 +225,7 @@ export function InteractiveKMeans() {
         </div>
 
         {/* Right Side: Graph */}
-        <div id="kmeans-graph-container" className="flex-[1.5] h-[500px] border border-white/5 rounded-2xl bg-black/60 relative overflow-hidden" aria-live="polite">
+        <div id="kmeans-graph-container" className="flex-[1.5] h-[350px] md:h-[500px] border border-white/5 rounded-2xl bg-black/60 relative overflow-hidden" aria-live="polite">
           {isTraining && (
              <div className="absolute top-4 right-4 text-[10px] uppercase tracking-widest text-purple-400 font-black animate-pulse flex items-center gap-2 z-10">
                 <div className="w-2 h-2 rounded-full bg-purple-500" /> Computing off-thread...

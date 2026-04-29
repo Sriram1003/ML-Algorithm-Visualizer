@@ -67,7 +67,7 @@ export default function StackingPage() {
 
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           {/* Workflow Visualization */}
-          <Card className="lg:col-span-8 bg-gray-900 border-purple-500/30 overflow-hidden min-h-[500px]">
+          <Card className="lg:col-span-8 bg-gray-900 border-purple-500/30 overflow-hidden min-h-[350px] md:h-[500px]">
             <CardHeader>
               <CardTitle className="text-purple-400">Stacking Workflow Animation</CardTitle>
             </CardHeader>

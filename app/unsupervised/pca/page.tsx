@@ -93,7 +93,7 @@ export default function PCAPage() {
             <div className="p-3 bg-teal-500/10 rounded-xl border border-teal-500/20">
                <Boxes className="w-8 h-8 text-teal-400" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-teal-500">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-teal-500">
               PCA <span className="text-teal-500 not-italic">Subspace</span>
             </h1>
           </div>
@@ -138,7 +138,7 @@ export default function PCAPage() {
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-               <Card className="bg-black/60 border-teal-500/20 border backdrop-blur-3xl p-8 h-[400px]">
+               <Card className="bg-black/60 border-teal-500/20 border backdrop-blur-3xl p-8 h-[300px] md:h-[400px]">
                   <h3 className="text-xs font-black text-white uppercase tracking-[0.2em] mb-6">2D Projection</h3>
                   {projection ? (
                     <div className="h-full">
@@ -159,7 +159,7 @@ export default function PCAPage() {
                   )}
                </Card>
 
-               <Card className="bg-black/60 border-teal-500/20 border backdrop-blur-3xl p-8 h-[400px]">
+               <Card className="bg-black/60 border-teal-500/20 border backdrop-blur-3xl p-8 h-[300px] md:h-[400px]">
                   <h3 className="text-xs font-black text-white uppercase tracking-[0.2em] mb-6">Variance Ratio</h3>
                   {variance ? (
                     <div className="h-full">

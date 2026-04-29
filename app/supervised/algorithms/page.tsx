@@ -87,7 +87,7 @@ export default function SupervisedAlgorithms() {
               </div>
               Theory Protocol
             </button>
-            <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-none mb-6 uppercase italic break-words">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter text-white mb-6 uppercase italic">
               Supervised <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 not-italic">Laboratories</span>
             </h1>
             <p className="text-gray-500 text-xl font-light tracking-wide max-w-2xl leading-relaxed">

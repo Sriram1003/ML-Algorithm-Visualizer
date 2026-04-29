@@ -34,7 +34,7 @@ export default function EnsembleMethodsDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020202] text-gray-200 flex flex-col items-center justify-center p-6 overflow-hidden">
+    <div className="w-full max-w-[100vw] overflow-hidden px-4 sm:px-6 md:px-8 min-h-screen bg-[#020202] text-gray-200 flex flex-col items-center justify-center py-10">
       <div className="max-w-7xl w-full">
         {/* Superior Branding */}
         <div className="flex flex-col items-center text-center mb-24">
@@ -47,7 +47,7 @@ export default function EnsembleMethodsDashboard() {
             <span className="text-[10px] font-black text-purple-400 uppercase tracking-[0.4em]">Integrated Intelligence Suite</span>
           </motion.div>
           
-          <h1 className="text-8xl font-black mb-6 tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500 leading-none">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black mb-6 tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
             Ensemble <span className="text-purple-500">Suite</span>
           </h1>
           <p className="text-xl text-gray-500 max-w-2xl font-light leading-relaxed">
@@ -56,7 +56,7 @@ export default function EnsembleMethodsDashboard() {
         </div>
 
         {/* Dashboard Grid */}
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {sections.map((s, i) => (
             <motion.div
               key={i}

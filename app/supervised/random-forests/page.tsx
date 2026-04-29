@@ -65,7 +65,7 @@ export default function RandomForestPage() {
             <div className="p-3 bg-emerald-500/10 rounded-xl border border-emerald-500/20">
                <Trees className="w-8 h-8 text-emerald-500" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-emerald-500">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-emerald-500">
               Random <span className="text-emerald-500 not-italic">Forest</span>
             </h1>
           </div>

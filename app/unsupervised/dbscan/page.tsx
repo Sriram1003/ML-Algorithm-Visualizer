@@ -141,7 +141,7 @@ export default function DBSCANPage() {
             <div className="p-3 bg-teal-500/10 rounded-xl border border-teal-500/20">
                <ScatterIcon className="w-8 h-8 text-teal-400" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-teal-400">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-teal-400">
               DBSCAN <span className="text-teal-400 not-italic">Density</span>
             </h1>
           </div>

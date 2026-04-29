@@ -1,8 +1,8 @@
 export default function Loading() {
   return (
     <div className="min-h-screen bg-[#020202] text-white flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/10 blur-[150px] rounded-full" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-600/10 blur-[150px] rounded-full" />
+      <div className="absolute top-0 right-0 w-full max-w-[500px] h-[350px] md:h-[500px] bg-purple-600/10 blur-[150px] rounded-full" />
+      <div className="absolute bottom-0 left-0 w-full max-w-[500px] h-[350px] md:h-[500px] bg-teal-600/10 blur-[150px] rounded-full" />
       
       <div className="relative z-10 flex flex-col items-center">
         {/* Animated Skeleton Ring */}

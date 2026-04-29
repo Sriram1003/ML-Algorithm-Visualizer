@@ -99,7 +99,7 @@ const DecisionTreePage: React.FC = () => {
             <div className="p-3 bg-amber-500/10 rounded-xl border border-amber-500/20">
                <GitBranch className="w-8 h-8 text-amber-500" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-amber-500">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-amber-500">
               Decision <span className="text-amber-500 not-italic">Tree</span>
             </h1>
           </div>
@@ -169,7 +169,7 @@ const DecisionTreePage: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                <MetricsDisplay metrics={metrics} />
-               <Card className="bg-white/5 border-amber-500/20 border backdrop-blur-3xl p-8 relative overflow-hidden h-[500px]">
+               <Card className="bg-white/5 border-amber-500/20 border backdrop-blur-3xl p-8 relative overflow-hidden h-[350px] md:h-[500px]">
                   <h3 className="text-xs font-black text-amber-500 uppercase tracking-[0.2em] mb-6">Logical Architecture</h3>
                   {treeData ? (
                     <div className="w-full h-full border border-white/5 rounded-xl bg-black/20 overflow-hidden">

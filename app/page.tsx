@@ -181,8 +181,8 @@ const Home: React.FC = () => {
 
       {/* Persistent global background elements */}
       <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none" />
-      <div className="fixed top-0 left-1/4 w-[500px] h-[500px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="fixed top-0 left-1/4 w-full max-w-[500px] h-[350px] md:h-[500px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="fixed bottom-0 right-1/4 w-full max-w-[500px] h-[350px] md:h-[500px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none" />
 
       <AnimatePresence mode="wait">
         {!isExploring ? (
@@ -204,7 +204,7 @@ const Home: React.FC = () => {
                 Next-Gen ML Learning Engine
               </motion.div>
               
-              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter text-white mb-2 uppercase leading-none italic">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter text-white mb-2 uppercase italic">
                 Quantified <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500 not-italic">Logic</span>
               </h1>
               
@@ -255,7 +255,7 @@ const Home: React.FC = () => {
                   </div>
                   Return Home
                 </button>
-                <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tighter uppercase italic break-words">
+                <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tighter uppercase italic break-words hyphens-auto">
                   Algorithm <br className="md:hidden" /><span className="text-purple-500 not-italic">Facilitators</span>
                 </h2>
               </div>
@@ -264,7 +264,7 @@ const Home: React.FC = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-32">
               {algorithmCards.map((card) => (
                 <AlgorithmCard key={card.href} {...card} />
               ))}
@@ -274,7 +274,7 @@ const Home: React.FC = () => {
             <div className="mt-32 pt-20 border-t border-white/10 relative">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
               
-              <div className="grid md:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div className="md:col-span-1">
                   <span className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-500 mb-4 block">System Architecture</span>
                   <h3 className="text-4xl font-black text-white mb-6 uppercase tracking-tighter italic">About the <br/>Engine</h3>

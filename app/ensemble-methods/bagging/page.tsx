@@ -78,7 +78,7 @@ const RandomForestVisualization: React.FC = () => {
         
         <div>
           <h3 className="text-xl font-semibold mb-3">Tree Predictions</h3>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 w-full">
             {[1, 2, 3].map(treeNum => (
               <div key={treeNum} className="bg-purple-900/30 p-4 rounded-lg">
                 <Network className="w-6 h-6 text-purple-400 mb-2" />

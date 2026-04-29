@@ -113,7 +113,7 @@ const LogisticRegressionPage: React.FC = () => {
             <div className="p-3 bg-indigo-500/10 rounded-xl border border-indigo-500/20">
               <Activity className="w-8 h-8 text-indigo-400" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-500">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-500">
               Logistic <span className="text-indigo-500 not-italic">Regression</span>
             </h1>
           </div>

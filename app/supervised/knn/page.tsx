@@ -77,7 +77,7 @@ const KNNPage: React.FC = () => {
             <div className="p-3 bg-purple-500/10 rounded-xl border border-purple-500/20">
                <LayoutGrid className="w-8 h-8 text-purple-400" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter uppercase italic">
               KNN <span className="text-purple-500 not-italic">Lab</span>
             </h1>
           </div>

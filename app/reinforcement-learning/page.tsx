@@ -102,7 +102,7 @@ const ReinforcementLearningPage = () => {
     {
       title: 'Core Architecture',
       content: (
-        <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
           {[
             { title: "The Agent", description: "The decider or 'brain' that learns from experience", icon: <Bot className="w-12 h-12 text-blue-400" />, shadow: "shadow-blue-500/20" },
             { title: "The Environment", description: "The external world and constraints the agent faces", icon: <Globe className="w-12 h-12 text-emerald-400" />, shadow: "shadow-emerald-500/20" },
@@ -135,7 +135,7 @@ const ReinforcementLearningPage = () => {
         <div className="w-full max-w-5xl mx-auto">
           <Card className="bg-gray-900/30 border-purple-500/20 backdrop-blur-md overflow-hidden shadow-2xl">
             <div className="p-12 space-y-12">
-              <div className="flex justify-center space-x-8">
+              <div className="flex justify-center gap-2 sm:gap-4 md:gap-8 flex-wrap max-w-full">
                 {Array(5).fill(0).map((_, i) => (
                   <motion.div
                     key={i}
@@ -143,20 +143,20 @@ const ReinforcementLearningPage = () => {
                       scale: i === gameState.position ? 1.15 : 1,
                       borderColor: i === gameState.position ? "#a855f7" : "rgba(168, 85, 247, 0.2)"
                     }}
-                    className={`w-24 h-24 border-2 flex items-center justify-center rounded-[2rem] transition-all relative ${i === goalPosition ? 'bg-emerald-500/10 border-emerald-500/40' : 'bg-black/40'}`}
+                    className={`w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 border-2 flex items-center justify-center rounded-[1rem] sm:rounded-[2rem] transition-all relative ${i === goalPosition ? 'bg-emerald-500/10 border-emerald-500/40' : 'bg-black/40'}`}
                   >
                     {i === gameState.position && (
-                      <motion.div layoutId="agent" className="z-10 bg-purple-600 p-3 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.5)]">
-                        <Bot className="w-10 h-10 text-white" />
+                      <motion.div layoutId="agent" className="z-10 bg-purple-600 p-1.5 sm:p-3 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.5)]">
+                        <Bot className="w-6 h-6 sm:w-10 sm:h-10 text-white" />
                       </motion.div>
                     )}
-                    {i === goalPosition && <Target className="w-10 h-10 text-emerald-400 opacity-60 absolute" />}
-                    <span className="absolute bottom-2 text-[10px] text-white/20 font-mono">STATE {i}</span>
+                    {i === goalPosition && <Target className="w-6 h-6 sm:w-10 sm:h-10 text-emerald-400 opacity-60 absolute" />}
+                    <span className="absolute -bottom-6 sm:bottom-2 text-[8px] sm:text-[10px] text-white/40 sm:text-white/20 font-mono">STATE {i}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <div className="flex justify-center gap-6">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-8 sm:mt-0 w-full">
                 <Button 
                   onClick={() => setGameState(prev => ({ ...prev, isRunning: !prev.isRunning }))} 
                   className={`px-10 h-14 rounded-2xl text-lg font-bold transition-all shadow-xl ${gameState.isRunning ? 'bg-red-600 hover:bg-red-700' : 'bg-purple-600 hover:bg-purple-700 shadow-purple-500/30'}`}
@@ -193,8 +193,8 @@ const ReinforcementLearningPage = () => {
                   <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/10"></div>
                 </div>
                 
-                <div className="rounded-3xl border border-white/5 overflow-hidden bg-black/40 shadow-inner">
-                  <table className="w-full text-left border-collapse">
+                <div className="rounded-3xl border border-white/5 overflow-x-auto bg-black/40 shadow-inner">
+                  <table className="w-full min-w-[400px] text-left border-collapse">
                     <thead>
                       <tr className="bg-white/5 text-[11px] uppercase tracking-widest text-purple-400 font-black">
                         <th className="p-6">State Vector</th>
@@ -236,7 +236,7 @@ const ReinforcementLearningPage = () => {
     {
       title: 'Advanced RL Models',
       content: (
-        <div className="grid md:grid-cols-2 gap-8 w-full max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl mx-auto">
           {[
             { title: "Q-Learning", description: "Foundational table-based value iteration for finite state spaces.", icon: <Search className="w-10 h-10 text-blue-400" />, gradient: "from-blue-500/20" },
             { title: "Deep Q-Network", description: "Neural function approximators for high-dimensional state spaces like pixels.", icon: <Cpu className="w-10 h-10 text-purple-400" />, gradient: "from-purple-500/20" },
@@ -280,8 +280,8 @@ const ReinforcementLearningPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#020202] text-white pb-32 selection:bg-purple-500/30">
-      <div className="max-w-7xl mx-auto px-8 pt-24">
+    <div className="w-full max-w-[100vw] overflow-hidden px-4 sm:px-6 md:px-8 min-h-screen bg-[#020202] text-white pb-32 selection:bg-purple-500/30">
+      <div className="max-w-7xl mx-auto pt-24">
         {/* Superior Navigation */}
         <div className="flex justify-between items-center mb-24">
           <Button onClick={handlePrev} variant="ghost" className="text-gray-500 hover:text-white group flex items-center gap-3 !bg-transparent">
@@ -325,7 +325,7 @@ const ReinforcementLearningPage = () => {
             className="w-full flex flex-col items-center"
           >
             <span className="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Phase 0{currentSection + 1}</span>
-            <h1 className="text-7xl font-black mb-20 text-center tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40 max-w-4xl">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black mb-20 text-center tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40 max-w-4xl">
               {sections[currentSection].title}
             </h1>
             {sections[currentSection].content}

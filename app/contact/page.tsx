@@ -7,10 +7,10 @@ import Link from 'next/link';
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#020202] text-white p-6 md:p-12 relative overflow-hidden">
+    <div className="min-h-screen bg-[#020202] text-white px-4 sm:px-6 md:px-8 py-6 sm:py-10 md:py-16 relative w-full max-w-[100vw] overflow-x-hidden">
       {/* Background Gradients */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-600/10 blur-[150px] rounded-full" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/10 blur-[150px] rounded-full" />
+      <div className="absolute top-0 right-0 w-full max-w-[500px] h-[350px] md:h-[500px] bg-teal-600/10 blur-[150px] rounded-full" />
+      <div className="absolute bottom-0 left-0 w-full max-w-[500px] h-[350px] md:h-[500px] bg-purple-600/10 blur-[150px] rounded-full" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Navigation Removed */}
@@ -18,7 +18,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 gap-20">
           {/* Left Side: Info */}
           <div>
-            <h1 className="text-7xl font-black tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-purple-600">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-purple-600">
               Station <span className="text-white">Contact</span>
             </h1>
             <p className="text-xl text-gray-400 font-light leading-relaxed mb-12 max-w-xl">
@@ -76,7 +76,7 @@ export default function ContactPage() {
             className="bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[3rem] p-12 shadow-2xl"
           >
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-3 block">Operator Name</label>
                   <input

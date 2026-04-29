@@ -64,7 +64,7 @@ export default function NaiveBayesPage() {
             <div className="p-3 bg-cyan-500/10 rounded-xl border border-cyan-500/20">
                <Sparkles className="w-8 h-8 text-cyan-500" />
             </div>
-            <h1 className="text-6xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-500">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-500">
               Naive <span className="text-cyan-500 not-italic">Bayes</span>
             </h1>
           </div>

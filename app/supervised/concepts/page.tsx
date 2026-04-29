@@ -43,7 +43,7 @@ export default function SupervisedConcepts() {
     {
       title: 'Architectural Framework',
       content: (
-        <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
           {[
             {
               icon: <Database className="w-10 h-10 text-purple-400" />,
@@ -143,7 +143,7 @@ export default function SupervisedConcepts() {
           >
             <div className="text-center mb-16">
               <span className="text-purple-500 text-[10px] font-black uppercase tracking-[0.6em] mb-4 block">Research Phase 0{currentSection + 1}</span>
-              <h1 className="text-7xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500 leading-tight">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
                 {sections[currentSection].title}
               </h1>
             </div>

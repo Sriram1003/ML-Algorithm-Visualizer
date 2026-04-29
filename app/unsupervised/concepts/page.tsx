@@ -41,7 +41,7 @@ export default function UnsupervisedConcepts() {
     {
       title: 'Structural Methodologies',
       content: (
-        <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
           {[
             {
               icon: <BookOpen className="w-10 h-10 text-teal-400" />,
@@ -141,7 +141,7 @@ export default function UnsupervisedConcepts() {
           >
             <div className="text-center mb-16">
               <span className="text-teal-500 text-[10px] font-black uppercase tracking-[0.6em] mb-4 block">Unsupervised Interface_{currentSection + 1}</span>
-              <h1 className="text-7xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-teal-900/40 leading-tight uppercase">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-teal-900/40 uppercase">
                 {sections[currentSection].title}
               </h1>
             </div>

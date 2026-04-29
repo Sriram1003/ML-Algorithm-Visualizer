@@ -8,7 +8,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-[#020202] text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] h-[350px] md:h-[500px] bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -19,7 +19,7 @@ export default function NotFound() {
           <Terminal className="w-10 h-10 text-red-500" />
         </div>
         
-        <h1 className="text-8xl md:text-9xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-600 mb-6">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl break-words hyphens-auto leading-tight font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-600 mb-6">
           404
         </h1>
         
